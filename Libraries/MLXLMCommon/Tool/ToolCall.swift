@@ -33,7 +33,7 @@ extension ToolCall {
         }
 
         // Convert the JSONValue arguments dictionary to a JSON-encoded Data object
-        let jsonObject = function.arguments.mapValues { $0.anyValue }
+        let jsonObject = function.arguments.mapValues { $0.anyValue as Any }
         let jsonData = try JSONSerialization.data(withJSONObject: jsonObject)
 
         // Decode the Input type from the JSON data
